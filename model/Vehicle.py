@@ -11,3 +11,6 @@ class Vehicle:
 
     def get_vtype(self):
         return self.__vtype
+
+
+
