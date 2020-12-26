@@ -1,9 +1,12 @@
+from model.Country import Country
+
+
 class Person:
-    def __init__(self, fname, lname, dob, nationality, sex='M'):
+    def __init__(self, fname, lname, dob, Country, sex='M'):
         self.__fname = fname
         self.__lname = lname
         self.__dob = dob
-        self.__nationality = nationality
+        self.__country = Country
         self.__sex = sex
 
     def get_fname(self):
@@ -15,8 +18,8 @@ class Person:
     def get_dob(self):
         return self.__dob
 
-    def get_nationality(self):
-        return self.__nationality
+    def get_country(self):
+        return self.__country
 
     def get_sex(self):
         return self.__sex

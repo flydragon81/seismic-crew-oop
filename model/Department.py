@@ -12,8 +12,7 @@ class Department:
         return self.__name
 
     def add_person(self, person):
-        if not isinstance(person, Person):
-            raise Exception('value is not a person object')
+        self.__instancecheck(person, Person)
         if person not in self.__personnel:
             self.__personnel.append(person)
             return True
@@ -21,8 +20,7 @@ class Department:
             return False
 
     def remove_person(self, person):
-        if not isinstance(person, Person):
-            raise Exception('value is not a person object')
+        self.__instancecheck(person, Person)
         if person in self.__personnel:
             self.__personnel.remove(person)
             return True
@@ -30,8 +28,7 @@ class Department:
             return False
 
     def add_vehicle(self, vehicle):
-        if not isinstance(vehicle, Vehicle):
-            raise Exception('value is not a vehicle object')
+        self.__instancecheck(vehicle, Vehicle)
         if vehicle not in self.__vehicles:
             self.__vehicles.append(vehicle)
             return True
@@ -39,8 +36,7 @@ class Department:
             return False
 
     def remove_vehicle(self, vehicle):
-        if not isinstance(vehicle, Vehicle):
-            raise Exception('value is not a vehicle object')
+        self.__instancecheck(vehicle, Vehicle)
         if vehicle in self.__vehicles:
             self.__vehicles.remove(vehicle)
             return True
@@ -52,3 +48,7 @@ class Department:
 
     def get_vehicle(self):
         return self.__vehicles
+
+    def __instancecheck(self, object, name_class):
+        if not isinstance(object, name_class):
+            raise Exception('value is not a' + object + ' object')

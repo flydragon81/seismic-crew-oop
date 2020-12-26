@@ -9,4 +9,3 @@ class VehicleTest(unittest.TestCase):
 
         self.assertEqual('10001', v.get_plate())
         self.assertEqual(Vehicle.TYPE_HEAVY, v.get_vtype())
-
